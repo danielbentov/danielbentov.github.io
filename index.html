@@ -21,7 +21,7 @@ window.ga(function(tracker) {
 
             window.addEventListener('message', function(event) {
                debugger;
-                if (event.origin != 'https://accounts.bizzabo.com') {
+                if (event.origin.indexOf('bizzabo.com) > 0) {
                     return;
                 }
 
