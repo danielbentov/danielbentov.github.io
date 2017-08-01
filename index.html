@@ -1,43 +1,42 @@
 Hello World
 
 <script>
-   (function(i, s, o, g, r, a, m) {
-                i.GoogleAnalyticsObject = r;
-                i[r] = i[r] || function() {
-                        (i[r].q = i[r].q || []).push(arguments);
-                    }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m);
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    (function(i, s, o, g, r, a, m) {
+        i.GoogleAnalyticsObject = r;
+        i[r] = i[r] || function() {
+            (i[r].q = i[r].q || []).push(arguments);
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-            var clientId;
-            window.ga('create', 'UA-59212282-2', 'auto');
-window.ga(function(tracker) {
-                clientId = tracker.get('clientId');
-                  var urlPath = window.location.href.replace(window.location.origin, '');
-                  window.ga('send', 'pageview', {'page': urlPath});
-});
+    var clientId;
+    window.ga('create', 'UA-59212282-2', 'auto');
+    window.ga(function(tracker) {
+        clientId = tracker.get('clientId');
+        var urlPath = window.location.href.replace(window.location.origin, '');
+        window.ga('send', 'pageview', {'page': urlPath});
+    });
 
-            window.addEventListener('message', function(event) {
-               debugger;
-                if (event.origin.indexOf('bizzabo.com') < 0) {
-                    return;
-                }
+    window.addEventListener('message', function(event) {
+        if (event.origin.indexOf('bizzabo.com') < 0) {
+            return;
+        }
 
-                if (event.data && (event.data = 'ticketWidgetReady')) {
-                    var frameWindows = document.getElementsByClassName('bizzabo-tickets-widget');
-                    for (var i = 0; i < frameWindows.length; i++) {
-                        var iframeSelector = document.getElementsByClassName('bizzabo-tickets-iframe' + i);
-                        var data = {type: 'clientId', val: clientId};
-                        var iframe = iframeSelector && iframeSelector[0] && iframeSelector[0].contentWindow && iframeSelector[0].contentWindow;
-                        iframe.postMessage(data, 'https://gang-accounts.bizzabo.com');
-                    }
-                }
-            });
-</script>
+        if (event.data && (event.data = 'ticketWidgetReady')) {
+            var frameWindows = document.getElementsByClassName('bizzabo-tickets-widget');
+            for (var i = 0; i < frameWindows.length; i++) {
+                var iframeSelector = document.getElementsByClassName('bizzabo-tickets-iframe' + i);
+                var data = {type: 'clientId', val: clientId};
+                var iframe = iframeSelector && iframeSelector[0] && iframeSelector[0].contentWindow && iframeSelector[0].contentWindow;
+                iframe.postMessage(data, 'https://gang-accounts.bizzabo.com');
+            }
+        }
+    });
+</script
 
 
 <!-- Bizzabo Tickets Widget Start -->
