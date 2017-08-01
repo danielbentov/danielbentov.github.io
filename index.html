@@ -18,7 +18,7 @@ Hello World
 window.ga(function(tracker) {
                 clientId = tracker.get('clientId');
                   var urlPath = window.location.href.replace(window.location.origin, '');
-                  window.ga('send', 'pageview', {'page': urlPath });
+                  window.ga('send', 'pageview');
 });
 
             window.addEventListener('message', function(event) {
