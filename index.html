@@ -31,7 +31,7 @@ window.ga(function(tracker) {
                         var iframeSelector = document.getElementsByClassName('bizzabo-tickets-iframe' + i);
                         var data = {type: 'clientId', val: clientId};
                         var iframe = iframeSelector && iframeSelector[0] && iframeSelector[0].contentWindow && iframeSelector[0].contentWindow;
-                        iframe.postMessage(data, config.dashboardUrl);
+                        iframe.postMessage(data, 'https://gang-accounts.bizzabo.com');
                     }
                 }
             });
