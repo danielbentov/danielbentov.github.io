@@ -17,8 +17,8 @@ Hello World
             window.ga('create', 'UA-59212282-2', 'auto');
 window.ga(function(tracker) {
                 clientId = tracker.get('clientId');
-                  var urlPath = window.location.href.replace(window.location.origin, '');
-                  window.ga('send', 'pageview');
+                  var urlPath = window.location.href;
+                  window.ga('send', 'pageview', {urlPath: urlPath});
 });
 
             window.addEventListener('message', function(event) {
