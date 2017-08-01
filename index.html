@@ -16,12 +16,12 @@ Hello World
             var clientId;
             window.ga('create', 'ua-592122821', 'auto');
 window.ga(function(tracker) {
-  debugger;
                 clientId = tracker.get('clientId');
 });
 
             window.addEventListener('message', function(event) {
-                if (event.origin != config.dashboardUrl) {
+               debugger;
+                if (event.origin != 'https://accounts.bizzabo.com') {
                     return;
                 }
 
