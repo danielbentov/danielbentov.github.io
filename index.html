@@ -27,10 +27,15 @@ Hello World
         if (event.data && (event.data = 'ticketWidgetReady')) {
             var frameWindows = document.getElementsByClassName('bizzabo-tickets-widget');
             for (var i = 0; i < frameWindows.length; i++) {
-                var iframeSelector = document.getElementsByClassName('bizzabo-tickets-iframe' + i);
-                var data = {type: 'clientId', val: clientId};
-                var iframe = iframeSelector && iframeSelector[0] && iframeSelector[0].contentWindow && iframeSelector[0].contentWindow;
-                iframe.postMessage(data, 'https://dev-accounts.bizzabo.com');
+                var iframeSelector = frameWindows[i].querySelector('iframe');
+                        var data = {type: 'clientId', val: clientId};
+                        var iframe = iframeSelector && iframeSelector.contentWindow;
+                        if(iframe) {
+                            iframe.postMessage(data, 'https://dev-accounts.bizzabo.com');
+                        } else {
+                            console.error('Analytics: Could not find ticket widget IFRAME');
+                        }
+                    }
             }
         }
     });
@@ -38,7 +43,7 @@ Hello World
 
 
 <!-- Bizzabo Tickets Widget Start -->
-<div class="bizzabo-tickets-widget" data-event-id="10001548" data-params="isInMinisite=true&widgetId=6220"></div>
+<div class="bizzabo-tickets-widget" data-event-id="10001009" data-params="isInMinisite=true&widgetId=1589"></div>
 <a href="https://www.bizzabo.com?utm_source=tickets_widget&utm_medium=powered_by&utm_campaign=tickets_widget" target="_blank" style="text-align: right; padding-right: 17px; text-decoration: none; width: 100%; display: inline-block; margin-top: 5px; box-sizing: border-box;" class="bizzabo-link-class">Powered by Bizzabo</a>
-<script type="text/javascript">(function(){var bz=document.createElement("script");bz.type="text/javascript";bz.async=true;bz.src="https://gang-organizer.bizzabo.com/widgets/tickets/tickets.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bz,s);})();</script>
+<script type="text/javascript">(function(){var bz=document.createElement("script");bz.type="text/javascript";bz.async=true;bz.src="https://dev-organizer.bizzabo.com/widgets/tickets/tickets.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bz,s);})();</script>
 <!-- Bizzabo Tickets Widget End -->
