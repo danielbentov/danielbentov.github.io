@@ -31,7 +31,7 @@ Hello World
                         var data = {type: 'clientId', val: clientId};
                         var iframe = iframeSelector && iframeSelector.contentWindow;
                         if(iframe) {
-                            iframe.postMessage(data, 'https://accounts.bizzabo.com');
+                            iframe.postMessage(data, 'https://dev-accounts.bizzabo.com');
                         } else {
                             console.error('Analytics: Could not find ticket widget IFRAME');
                         }
