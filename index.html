@@ -1,3 +1,28 @@
+<head>
+  <meta charset="utf-8">
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.69/Build/Cesium/Cesium.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.69/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+</head>
+<body>
+  <div id="cesiumContainer" style="width: 700px; height:400px"></div>
+  <script>
+    Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJjZWE5NmEzNS05MmI3LTRiNmYtOGZlNS03OWUyYmJmMGJlY2MiLCJpZCI6MjU5MzYsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1ODY4OTQzMTF9.FzGWHc5EHmOzMG-3K3CtTbVgeHcPIAu3AzVT7bAxnng';
+    var viewer = new Cesium.Viewer('cesiumContainer', {
+        terrainProvider: Cesium.createWorldTerrain()
+    });
+
+    var tileset = viewer.scene.primitives.add(
+        new Cesium.Cesium3DTileset({
+            url: Cesium.IonResource.fromAssetId('98354')
+        })
+    );
+    viewer.zoomTo(tileset);
+  </script>
+</body>
+
+
+
+
 <!-- Bizzabo Web Agenda Begin -->
 <div name="bizzabo-web-agenda" data-unique-name="10004562"></div>
 <script type="text/javascript">(function() {
